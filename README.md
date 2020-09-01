@@ -10,7 +10,7 @@
 
 Based on [Gatsby's blog starter](https://github.com/gatsbyjs/gatsby-starter-blog).
 
-Kick off your project with this blog boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+Basic Gatsby + Wordpress Blog boilerplate. Ships with the main Gatsby configuration files you might need to get up and running fast.
 
 ## Dependencies
 You will need to install [WPGraphQL](https://github.com/wp-graphql/wp-graphql) and [WPGatsby](https://github.com/gatsbyjs/wp-gatsby) on your live Wordpress Instance. You can find more info [here](https://docs.wpgraphql.com/getting-started/install-and-activate/).
