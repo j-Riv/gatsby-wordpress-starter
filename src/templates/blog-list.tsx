@@ -70,21 +70,23 @@ const BlogList = ({ data, pageContext }: Props) => {
           </div>
         )
       })}
-      {!isFirst && (
-        <Link to={`/blog` + prevPage} rel="prev">
-          ← Previous Page
-        </Link>
-      )}
-      {Array.from({ length: numPages }, (_, i) => (
-        <Link key={`pagination-number${i + 1}`} to={`/blog/${i === 0 ? "" : i + 1}`}>
-          {i + 1}
-        </Link>
-      ))}
-      {!isLast && (
-        <Link to={`/blog` + nextPage} rel="next">
-          Next Page →
-        </Link>
-      )}
+      <div className="pagination">
+        {!isFirst && (
+          <Link to={`/blog` + prevPage} rel="prev">
+            ← Previous Page
+          </Link>
+        )}
+        {Array.from({ length: numPages }, (_, i) => (
+          <Link key={`pagination-number${i + 1}`} to={`/blog/${i === 0 ? "" : i + 1}`} className={i + 1 === currentPage ? 'active' : ''}>
+            {i + 1}
+          </Link>
+        ))}
+        {!isLast && (
+          <Link to={`/blog` + nextPage} rel="next">
+            Next Page →
+          </Link>
+        )}
+      </div>
     </Layout>
   )
 }

@@ -13,7 +13,6 @@ interface Props {
         node: {
           sourceUrl: string
           localFile: {
-            publicUrl: string
             childImageSharp: {
               fluid: any
             }
@@ -54,7 +53,6 @@ query($id: String!) {
         node {
           sourceUrl
           localFile {
-            publicURL
             childImageSharp {
               fluid(maxWidth: 800, quality: 100) {
                 originalName

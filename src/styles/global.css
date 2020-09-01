@@ -1,0 +1,8 @@
+.pagination a {
+    padding: 5px;
+}
+
+.pagination a.active {
+    font-weight: bold;
+    color: #000;
+}

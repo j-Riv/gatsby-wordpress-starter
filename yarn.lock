@@ -6813,7 +6813,7 @@ gatsby-recipes@^0.2.17:
     yoga-layout-prebuilt "^1.9.6"
     yup "^0.27.0"
 
-gatsby-source-filesystem@^2.3.23, gatsby-source-filesystem@^2.3.24, gatsby-source-filesystem@^2.3.25:
+gatsby-source-filesystem@^2.3.23, gatsby-source-filesystem@^2.3.25:
   version "2.3.25"
   resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.3.25.tgz#7281ce07a5dae8d94fbafc81103112858a104049"
   integrity sha512-ZrLi8on+wMQOvd4YLmpb/bcw6K0BA6IeZ949+I465iTf3FIivdh7+at06q52fv1hfsPDQ8PF1KrWp3qDftbORQ==
