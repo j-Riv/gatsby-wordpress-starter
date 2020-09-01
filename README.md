@@ -5,15 +5,15 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby Wordpress Starter
+  Gatsby WordPress Starter
 </h1>
 
 Based on [Gatsby's blog starter](https://github.com/gatsbyjs/gatsby-starter-blog).
 
-Basic Gatsby + Wordpress blog boilerplate. Ships with the main Gatsby configuration files you might need to get up and running fast.
+Basic Gatsby + WordPress blog boilerplate. Ships with the main Gatsby configuration files you might need to get up and running fast.
 
 ## Dependencies
-You will need to install [WPGraphQL](https://github.com/wp-graphql/wp-graphql) and [WPGatsby](https://github.com/gatsbyjs/wp-gatsby) on your live Wordpress Instance. You can find more info [here](https://docs.wpgraphql.com/getting-started/install-and-activate/).
+You will need to install [WPGraphQL](https://github.com/wp-graphql/wp-graphql) and [WPGatsby](https://github.com/gatsbyjs/wp-gatsby) on your live WordPress Instance. You can find more info [here](https://docs.wpgraphql.com/getting-started/install-and-activate/).
 
 ## Quick Start
 1. **Clone this repo.**
@@ -29,7 +29,7 @@ You will need to install [WPGraphQL](https://github.com/wp-graphql/wp-graphql) a
   ```sh
   touch .env
   ```
-  Add your Wordpress Instance GraphQL url.
+  Add your WordPress Instance GraphQL url.
   ```sh
   WP_URL="https://your-domain.com/graphql"
   ```
