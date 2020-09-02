@@ -1,9 +1,13 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
+import styled from "styled-components"
+
+const Title = styled.h3`
+  margin-bottom: ${rhythm(1 / 4)};
+`
 
 interface Props {
   data: {
@@ -27,15 +31,11 @@ const BlogIndex = ({ data }: Props) => {
         const title = node.title || node.slug
         return (
           <div key={node.slug}>
-            <h3
-              style={{
-                marginBottom: rhythm(1 / 4),
-              }}
-            >
-              <Link style={{ boxShadow: `none` }} to={node.slug}>
+            <Title>
+              <Link to={node.slug}>
                 {title}
               </Link>
-            </h3>
+            </Title>
             <small>{node.date}</small>
             <p
               dangerouslySetInnerHTML={{

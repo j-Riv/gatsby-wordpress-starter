@@ -39,9 +39,7 @@ const Layout = ({ location, title, children }: Props) => {
   if (location.pathname === rootPath) {
     header = (
       <StyledLargeTitle>
-        <StyledLink
-          to={`/`}
-        >
+        <StyledLink to={`/`}>
           {title}
         </StyledLink>
       </StyledLargeTitle>
@@ -49,9 +47,7 @@ const Layout = ({ location, title, children }: Props) => {
   } else {
     header = (
       <StyledSmallTitle>
-        <StyledLink
-          to={`/`}
-        >
+        <StyledLink to={`/`}>
           {title}
         </StyledLink>
       </StyledSmallTitle>
@@ -61,9 +57,7 @@ const Layout = ({ location, title, children }: Props) => {
   return (
     <Container>
       <header>{header}</header>
-      <StyledLink
-        to={`/blog`}
-      >
+      <StyledLink to={`/blog`}>
         All Posts
       </StyledLink>
       <main>{children}</main>
