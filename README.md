@@ -19,7 +19,7 @@ You will need to install [WPGraphQL](https://github.com/wp-graphql/wp-graphql) a
 1. **Clone this repo.**
   ```sh
   git clone git@github.com:j-Riv/gatsby-wordpress-starter.git
-  cd gatsby-wordpress-sterter
+  cd gatsby-wordpress-starter
   ```
 2. **Install dependencies.**
   ```sh
