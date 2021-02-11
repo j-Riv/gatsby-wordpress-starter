@@ -1,7 +1,30 @@
 import React from "react"
 import { Link } from "gatsby"
+import { rhythm } from "../utils/typography"
+import styled from "styled-components"
 
-import { rhythm, scale } from "../utils/typography"
+const Container = styled.div`
+  margin-left: auto;
+  margin-right: auto;
+  max-width: ${rhythm(24)};
+  padding: ${rhythm(1.5)} ${rhythm(3 / 4)};
+`
+
+const StyledLargeTitle = styled.h1`
+  margin-bottom: rhythm(1.5);
+  margin-top: 0;
+`
+
+const StyledSmallTitle = styled.h3`
+  font-family: Montserrat, sans-serif;
+  margin-top: 0;
+`
+
+const StyledLink = styled(Link)`
+  box-shadow: none;
+  text-decoration: none;
+  color: inherit;
+`
 
 interface Props {
   location: Location
@@ -15,74 +38,35 @@ const Layout = ({ location, title, children }: Props) => {
 
   if (location.pathname === rootPath) {
     header = (
-      <h1
-        style={{
-          ...scale(1.5),
-          marginBottom: rhythm(1.5),
-          marginTop: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            textDecoration: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
+      <StyledLargeTitle>
+        <StyledLink to={`/`}>
           {title}
-        </Link>
-      </h1>
+        </StyledLink>
+      </StyledLargeTitle>
     )
   } else {
     header = (
-      <h3
-        style={{
-          fontFamily: `Montserrat, sans-serif`,
-          marginTop: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            textDecoration: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
+      <StyledSmallTitle>
+        <StyledLink to={`/`}>
           {title}
-        </Link>
-      </h3>
+        </StyledLink>
+      </StyledSmallTitle>
     )
   }
 
   return (
-    <div
-      style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
-        maxWidth: rhythm(24),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-      }}
-    >
+    <Container>
       <header>{header}</header>
-      <Link
-        style={{
-          boxShadow: `none`,
-          textDecoration: `none`,
-          color: `inherit`,
-        }}
-        to={`/blog`}
-      >
+      <StyledLink to={`/blog`}>
         All Posts
-      </Link>
+      </StyledLink>
       <main>{children}</main>
       <footer>
         © {new Date().getFullYear()}, Built with
         {` `}
         <a href="https://www.gatsbyjs.org">Gatsby</a>
       </footer>
-    </div>
+    </Container>
   )
 }
 

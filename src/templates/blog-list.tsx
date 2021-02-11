@@ -1,9 +1,23 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
+import styled from "styled-components"
+
+const Title = styled.h3`
+  margin-bottom: ${rhythm(1 / 4)};
+`
+
+const StyledLink = styled(Link)`
+  box-shadow: none;
+`
+
+const StyledPaginationLink = styled(Link)`
+  font-weight: ${(props: { active: boolean }) => props.active ? 'bold' : 'inherit' };
+  color: ${(props: { active: boolean }) => props.active ? '#000' : '#007acc' };
+  padding: 5px;
+`
 
 interface Props {
   data: {
@@ -37,8 +51,6 @@ const BlogList = ({ data, pageContext }: Props) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allWpPost.edges
 
-  console.log(data)
-  console.log(pageContext)
   const { currentPage, numPages } = pageContext
   const isFirst = currentPage === 1
   const isLast = currentPage === numPages
@@ -52,15 +64,11 @@ const BlogList = ({ data, pageContext }: Props) => {
         const title = node.title || node.slug
         return (
           <div key={node.slug}>
-            <h3
-              style={{
-                marginBottom: rhythm(1 / 4),
-              }}
-            >
-              <Link style={{ boxShadow: `none` }} to={`/` + node.slug}>
+            <Title>
+              <StyledLink to={`/` + node.slug}>
                 {title}
-              </Link>
-            </h3>
+              </StyledLink>
+            </Title>
             <small>{node.date}</small>
             <p
               dangerouslySetInnerHTML={{
@@ -70,21 +78,25 @@ const BlogList = ({ data, pageContext }: Props) => {
           </div>
         )
       })}
-      <div className="pagination">
+      <div>
         {!isFirst && (
-          <Link to={`/blog` + prevPage} rel="prev">
+          <StyledPaginationLink to={`/blog` + prevPage} rel="prev">
             ← Previous Page
-          </Link>
+          </StyledPaginationLink>
         )}
         {Array.from({ length: numPages }, (_, i) => (
-          <Link key={`pagination-number${i + 1}`} to={`/blog/${i === 0 ? "" : i + 1}`} className={i + 1 === currentPage ? 'active' : ''}>
+          <StyledPaginationLink
+            key={`pagination-number${i + 1}`}
+            to={`/blog/${i === 0 ? "" : i + 1}`}
+            active={i + 1 === currentPage ? true : false}
+          >
             {i + 1}
-          </Link>
+          </StyledPaginationLink>
         ))}
         {!isLast && (
-          <Link to={`/blog` + nextPage} rel="next">
+          <StyledPaginationLink to={`/blog` + nextPage} rel="next">
             Next Page →
-          </Link>
+          </StyledPaginationLink>
         )}
       </div>
     </Layout>
